@@ -1,0 +1,254 @@
+/* ===============================
+   RESET
+================================ */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ===============================
+   THEME VARIABLES
+================================ */
+body {
+  --bg-main: #f0fdf4;
+  --bg-card: #ffffff;
+  --border: #bbf7d0;
+  --primary: #16a34a;
+  --primary-hover: #15803d;
+  --text-main: #052e16;
+  --text-muted: #14532d;
+  --success: #16a34a;
+  --danger: #dc2626;
+
+  font-family: "Segoe UI", Arial, sans-serif;
+  background-color: var(--bg-main);
+  color: var(--text-main);
+  min-height: 100vh;
+  transition: background-color 0.3s, color 0.3s;
+}
+/* ===============================
+   SMOOTH THEME TRANSITION
+================================ */
+html, body, .container, table, th, td, input, select, button {
+  transition:
+    background-color 0.35s ease,
+    color 0.35s ease,
+    border-color 0.35s ease,
+    box-shadow 0.35s ease;
+}
+
+/* ===============================
+   DARK MODE
+================================ */
+html.dark body {
+  --bg-main: #0f172a;
+  --bg-card: #020617;
+  --border: #334155;
+  --primary: #22c55e;
+  --primary-hover: #16a34a;
+  --text-main: #e5e7eb;
+  --text-muted: #94a3b8;
+}
+
+
+/* ===============================
+   CONTAINER
+================================ */
+.container {
+  max-width: 1100px;
+  margin: 40px auto;
+  padding: 25px;
+  background-color: var(--bg-card);
+  border-radius: 14px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+/* ===============================
+   HEADINGS
+================================ */
+h1, h2, h3 {
+  margin-bottom: 15px;
+  color: var(--primary);
+}
+
+p {
+  margin-bottom: 15px;
+  color: var(--text-muted);
+}
+
+/* ===============================
+   INPUTS & SELECT
+================================ */
+input, select {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 14px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background-color: var(--bg-card);
+  color: var(--text-main);
+}
+
+input:focus, select:focus {
+  outline: none;
+  border-color: var(--primary);
+}
+
+/* ===============================
+   BUTTONS
+================================ */
+button, .btn {
+  padding: 10px 18px;
+  background-color: var(--primary);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+button:hover, .btn:hover {
+  background-color: var(--primary-hover);
+}
+
+/* ===============================
+   TABLE
+================================ */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+th, td {
+  border: 1px solid var(--border);
+  padding: 12px;
+  text-align: center;
+}
+
+th {
+  background-color: var(--bg-main);
+}
+
+/* ===============================
+   LINKS
+================================ */
+a {
+  color: var(--primary);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* ===============================
+   CARDS
+================================ */
+#chargingPointsContainer > div {
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 15px;
+  margin-bottom: 20px;
+  background-color: var(--bg-card);
+}
+
+/* ===============================
+   THEME BUTTON
+================================ */
+.theme-toggle {
+  float: right;
+  background: none;
+  border: 1px solid var(--border);
+  color: var(--text-main);
+  padding: 6px 10px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: transform 0.3s ease;
+}
+
+.theme-toggle:hover {
+  transform: rotate(15deg) scale(1.1);
+}
+/* ===== PAYMENT MODAL ===== */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+}
+
+.modal-content {
+  background: #ffffff;
+  color: #000;
+  padding: 25px;
+  border-radius: 10px;
+  width: 300px;
+  text-align: center;
+}
+
+.hidden {
+  display: none;
+}
+
+.cancel-btn {
+  background: #ef4444;
+  margin-left: 10px;
+}
+/* ===== PAYMENT MODAL ===== */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.modal.hidden {
+  display: none;
+}
+
+.modal-box {
+  background: #ffffff;
+  color: #000;
+  padding: 25px;
+  width: 350px;
+  border-radius: 10px;
+  text-align: center;
+  animation: scaleIn 0.3s ease;
+}
+
+.modal-actions {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.btn.success {
+  background: #16a34a;
+  color: #fff;
+}
+
+.btn.danger {
+  background: #dc2626;
+  color: #fff;
+}
+
+@keyframes scaleIn {
+  from { transform: scale(0.8); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+

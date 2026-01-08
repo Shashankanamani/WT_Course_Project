@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin Dashboard - EV Charging</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <script>
+  (function () {
+    const theme = localStorage.getItem("theme");
+    if (theme === "dark") {
+      document.documentElement.classList.add("dark");
+      document.body?.classList.add("dark");
+    }
+  })();
+</script>
+
+</head>
+<body>
+
+<div class="container">
+    <button class="theme-toggle" onclick="toggleTheme()">
+  🌙 / 🌱
+</button>
+
+
+    <h1>Admin Dashboard</h1>
+
+    <h3>Add Charging Station</h3>
+
+    <input type="text" id="stationName" placeholder="Station Name">
+    <input type="text" id="stationLocation" placeholder="Location">
+    <input type="number" id="stationLat" placeholder="Latitude">
+    <input type="number" id="stationLng" placeholder="Longitude">
+    <input type="number" id="stationPrice" placeholder="Price per kWh (₹)">
+    <input type="number" id="chargingPointsCount" placeholder="No. of Charging Points">
+
+    <select id="stationStatus">
+        <option value="Available">Available</option>
+        <option value="Busy">Busy</option>
+    </select>
+
+    <button class="btn admin-btn" onclick="addStation()">Add Station</button>
+
+    <hr>
+
+    <h3>Charging Stations</h3>
+    <table id="stationTable"></table>
+
+    <hr>
+
+    <h3>Block Charging Slot (Maintenance)</h3>
+
+    <select id="adminStationIndex"></select>
+    <select id="adminPointId"></select>
+    <select id="adminDate"></select>
+    <select id="adminTimeSlot"></select>
+
+    <button class="btn admin-btn" onclick="blockSlot()">Mark Busy</button>
+
+    <hr>
+
+    <h3>User Bookings</h3>
+    <table id="bookingTable"></table>
+
+    <p style="margin-top:20px;">
+        <a href="../index.html">← Logout</a>
+    </p>
+</div>
+<script>
+if (!localStorage.getItem("adminLoggedIn")) {
+    alert("Unauthorized access! Please login as admin.");
+    window.location.href = "admin_login.html";
+}
+</script>
+
+<script src="../js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>EV Charging Management System</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script>
+  (function () {
+    const theme = localStorage.getItem("theme");
+    if (theme === "dark") {
+      document.documentElement.classList.add("dark");
+      document.body?.classList.add("dark");
+    }
+  })();
+</script>
+
+</head>
+<body>
+
+<div class="container">
+    <button class="theme-toggle" onclick="toggleTheme()">
+  🌙 / 🌱
+</button>
+
+
+    <h1>EV Charging Management System</h1>
+
+    <p style="text-align:center;">
+        Login or register to book EV charging slots
+    </p>
+
+    <hr style="margin:20px 0;">
+
+    <!-- ================= USER LOGIN ================= -->
+    <h3>User Login</h3>
+
+<input type="text" id="loginUsername" placeholder="Username">
+<input type="password" id="loginPassword" placeholder="Password">
+
+<button class="btn" onclick="userLogin()">Login</button>
+
+
+    <p style="margin-top:10px;">
+        New user?
+        <a href="register.html">Create an account</a>
+    </p>
+
+    <hr style="margin:25px 0;">
+
+    <!-- ================= ADMIN LOGIN ================= -->
+    <h3>Admin Access</h3>
+<p>
+    <a href="admin/admin_login.html">Go to Admin Login →</a>
+</p>
+
+</div>
+
+<script src="js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>User Dashboard - EV Charging</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <script>
+  (function () {
+    const theme = localStorage.getItem("theme");
+    if (theme === "dark") {
+      document.documentElement.classList.add("dark");
+      document.body?.classList.add("dark");
+    }
+  })();
+</script>
+
+</head>
+<!-- ================= PAYMENT MODAL ================= -->
+<div id="paymentModal" class="modal hidden">
+  <div class="modal-content">
+    <h3>Advance Payment</h3>
+    <p>Amount: ₹<span id="paymentAmount"></span></p>
+
+    <button class="btn" onclick="confirmPayment()">Pay Now</button>
+    <button class="btn cancel" onclick="closePaymentModal()">Cancel</button>
+  </div>
+</div>
+
+
+<!-- ================= PAYMENT MODAL ================= -->
+<div id="paymentModal" class="modal hidden">
+  <div class="modal-box">
+    <h2>Complete Payment</h2>
+
+    <p><strong>Gateway:</strong> Razorpay</p>
+    <p><strong>Advance Amount:</strong> ₹100</p>
+
+    <p id="paymentDetails"></p>
+
+    <div class="modal-actions">
+      <button class="btn success" onclick="confirmPayment()">Pay Now</button>
+      <button class="btn danger" onclick="closePaymentModal()">Cancel</button>
+    </div>
+  </div>
+</div>
+
+<body>
+
+<div class="container">
+    <button class="theme-toggle" onclick="toggleTheme()">
+  🌙 / 🌱
+</button>
+
+    <h1>EV Charging User Dashboard</h1>
+
+    <p>Select a charging station to view charging points and time slots</p>
+
+    <!-- ========================= -->
+    <!-- STATIONS TABLE -->
+    <!-- ========================= -->
+    <table id="userStationTable">
+        <tr>
+            <th>Station Name</th>
+            <th>Location</th>
+            <th>Status</th>
+            <th>Price (₹/kWh)</th>
+            <th>Distance</th>
+            <th>ETA</th>
+            <th>Action</th>
+        </tr>
+    </table>
+
+    <!-- ========================= -->
+    <!-- CHARGING POINTS & SLOTS -->
+    <!-- ========================= -->
+    <hr style="margin: 30px 0;">
+
+    <h2 id="selectedStationTitle"></h2>
+
+<!-- Date Selection -->
+<div style="margin-bottom: 20px;">
+    <label for="bookingDate"><strong>Select Booking Date:</strong></label>
+<select id="bookingDate">
+        <option value="">-- Select Date --</option>
+    </select>
+</div>
+
+<div id="chargingPointsContainer"></div>
+<hr style="margin: 30px 0;">
+
+<hr style="margin:30px 0;">
+<h2>My Bookings</h2>
+<h2>My Active Bookings</h2>
+
+<table id="myBookingsTable">
+    <tr>
+        <th>Station</th>
+        <th>Point</th>
+        <th>Date</th>
+        <th>Time</th>
+        <th>Payment</th>
+        <th>Action</th>
+        <th>Advance</th>
+<th>Refund</th>
+
+    </tr>
+</table>
+
+
+
+
+<hr style="margin:30px 0;">
+
+<h2>Booking History</h2>
+<table id="bookingHistoryTable"></table>
+
+
+
+
+
+
+
+    <!-- ========================= -->
+    <!-- LOGOUT -->
+    <!-- ========================= -->
+    <p style="margin-top: 30px;">
+        <a href="index.html" onclick="localStorage.removeItem('loggedInUser')">
+    ← Logout
+</a>
+
+    </p>
+</div>
+<script>
+    if (!localStorage.getItem("loggedInUser")) {
+        alert("Please login first");
+        window.location.href = "login.html";
+    }
+</script>
+
+<!-- JavaScript -->
+<script src="js/script.js"></script>
+
+</body>
+</html>

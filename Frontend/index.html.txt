@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Smart EV Charging System</title>
+
+    <!-- Link CSS file -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <div class="container">
+        <h1>Smart EV Charging Station Management System</h1>
+
+        <p>
+            This web application helps electric vehicle users locate charging stations,
+            check charger availability, book charging slots, and view pricing details.
+        </p>
+
+        <div class="buttons">
+            <a href="login.html" class="btn">User Login</a>
+            <a href="register.html" class="btn">User Registration</a>
+            <a href="admin/admin_login.html" class="btn admin-btn">Admin Login</a>
+        </div>
+    </div>
+
+</body>
+</html>

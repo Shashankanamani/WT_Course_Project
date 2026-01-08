@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin Login</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <script>
+  (function () {
+    const theme = localStorage.getItem("theme");
+    if (theme === "dark") {
+      document.documentElement.classList.add("dark");
+      document.body?.classList.add("dark");
+    }
+  })();
+</script>
+
+</head>
+<body>
+
+<div class="container">
+    <button class="theme-toggle" onclick="toggleTheme()">
+  🌙 / 🌱
+</button>
+
+    <h2>Admin Login</h2>
+
+    <input type="text" id="adminUsername" placeholder="Admin Username">
+    <input type="password" id="adminPassword" placeholder="Admin Password">
+
+    <button class="btn admin-btn" onclick="adminLogin()">Login</button>
+
+    <p style="margin-top:15px;">
+        <a href="../index.html">← Back to Home</a>
+    </p>
+</div>
+
+<script>
+function adminLogin() {
+    const username = document.getElementById("adminUsername").value;
+    const password = document.getElementById("adminPassword").value;
+
+    // Hardcoded admin credentials (OK for academic project)
+    if (username === "admin" && password === "admin123") {
+        localStorage.setItem("adminLoggedIn", "true");
+        window.location.href = "admin_dashboard.html";
+    } else {
+        alert("Invalid admin credentials");
+    }
+}
+</script>
+<script src="../js/script.js"></script>
+
+</body>
+</html>

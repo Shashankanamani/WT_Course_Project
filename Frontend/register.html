@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>User Register</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script>
+  (function () {
+    const theme = localStorage.getItem("theme");
+    if (theme === "dark") {
+      document.documentElement.classList.add("dark");
+      document.body?.classList.add("dark");
+    }
+  })();
+</script>
+
+</head>
+<body>
+
+<div class="container">
+    <button class="theme-toggle" onclick="toggleTheme()">
+  🌙 / 🌱
+</button>
+    <h2>User Registration</h2>
+
+    <input type="text" id="regUsername" placeholder="Username">
+    <input type="password" id="regPassword" placeholder="Password">
+
+    <button class="btn" onclick="registerUser()">Register</button>
+
+    <p style="margin-top:15px;">
+        Already registered? <a href="index.html">Login here</a>
+
+    </p>
+
+    <p><a href="index.html">← Back to Home</a></p>
+</div>
+
+<script src="js/script.js"></script>
+
+
+</body>
+</html>

@@ -1,0 +1,10 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Admin Test</title>
+</head>
+<body>
+    <h1>Admin Login Test Page</h1>
+    <p>If you can see this, HTML works.</p>
+</body>
+</html>

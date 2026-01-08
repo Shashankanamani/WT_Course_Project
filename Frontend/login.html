@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>User Login</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script>
+  (function () {
+    const theme = localStorage.getItem("theme");
+    if (theme === "dark") {
+      document.documentElement.classList.add("dark");
+      document.body?.classList.add("dark");
+    }
+  })();
+</script>
+
+</head>
+<body>
+
+<div class="container">
+    <button class="theme-toggle" onclick="toggleTheme()">
+  🌙 / 🌱
+</button>
+    <h2>User Login</h2>
+
+    <input type="text" id="loginUsername" placeholder="Username">
+    <input type="password" id="loginPassword" placeholder="Password">
+
+    <button class="btn" onclick="loginUser()">Login</button>
+
+    <p style="margin-top:15px;">
+        New user? <a href="register.html">Register here</a>
+    </p>
+
+    <p><a href="index.html">← Back to Home</a></p>
+</div>
+
+<script>
+function loginUser() {
+    const username = document.getElementById("loginUsername").value;
+    const password = document.getElementById("loginPassword").value;
+
+    let users = JSON.parse(localStorage.getItem("users")) || [];
+
+    const validUser = users.find(
+        u => u.username === username && u.password === password
+    );
+
+    if (validUser) {
+        // store login session
+        localStorage.setItem("loggedInUser", username);
+        window.location.href = "dashboard.html";
+    } else {
+        alert("Invalid username or password");
+    }
+}
+</script>
+<script src="../js/script.js"></script>
+
+</body>
+</html>

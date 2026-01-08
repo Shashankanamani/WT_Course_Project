@@ -1,0 +1,16 @@
+{
+  "users": [
+    {
+      "username": "Shashank",
+      "password": "Shashank"
+    }
+  ],
+  "admins": [
+    {
+      "username": "admin",
+      "password": "admin123"
+    }
+  ],
+  "stations": [],
+  "bookings": []
+}
